@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap"
+            rel="stylesheet"
+        >
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
+    <body>
+        <header>
+            <span class="navigation__group">
+                <h4 class="user-nameh">{{ user.first_name }}</h4>
+                <h4 class="emailh">{{ user.email }}</h4>
+
+                <img class="icon" src="../static/images/message.svg" alt="Message">
+                <img class="icon" src="../static/images/notification.svg" alt="Notification">
+                <img class="profile" src="../static/images/7586968.png" alt="Joe Doe Picture">
+           
+            </span>
+                    <div class="dropdown__wrapper hide dropdown__wrapper--fade-in none">
+                <div class="dropdown__group">
+                    <div class="user-name">{{ user.first_name }}</div>
+                    <div class="email">{{ user.email }}</div>
+                </div>
+                <hr class="divider">
+                <nav>
+                    <ul>
+                        <li>
+                            <img src="../static/images/profile.svg" alt="Profile"> My Profile
+                        </li>
+                        <li>
+                            <img src="../static/images/settings.svg" alt="Settings"> Settings
+                        </li>
+                    </ul>
+                    <hr class="divider">
+                    <ul>
+                        <li>
+                            <img src="../static/images/tutorials.svg" alt="Tutorials"> Tutorials
+                        </li>
+                        <li>
+                            <img src="../static/images/help.svg" alt="Help"> Help Center
+                        </li>
+                    </ul>
+                    <hr class="divider">
+                    <ul>
+                        <li>
+                            <img src="../static/images/premium.svg" alt="Premium">Go Premium
+                        </li>
+                        <li style="color: #E3452F;" onclick="location.href='/logout';">
+                            <img src="../static/images/logout.svg" alt="Log Out" >Log out
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        {% block content %} {% endblock %}
+        <script src="../static/js/script.js"></script>
+    </body>
+</html>
+
+
+
